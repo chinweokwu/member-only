@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<% if false %>
 <h1>Posts</h1>
 
 <table>
@@ -23,5 +23,23 @@
 </table>
 
 <br>
+<%= link_to 'Create New Post', new_post_path %>
+<% end %>
 
-<%= link_to 'New Post', new_post_path %>
+<h1>Posts</h1>
+<div class="container-fluid col-md-6 col-md-offset-3 posts">
+ 
+    <%= link_to "Create new post", new_post_path, class: 'btn btn-default', id: 'post-button' %>
+  
+  
+  <% @posts.each do |post| %>
+    <div class="well">
+      <p class="post-body"><%= post.post %></p>
+      <span class="owner">
+        <em><%= post.created_at.strftime('%b. %d, %Y') %></em>
+        <br />
+      </span>
+    </div>
+  <% end %>
+</div>
+
