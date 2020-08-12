@@ -1,45 +1,23 @@
-<p id="notice"><%= notice %></p>
-<% if false %>
-<h1>Posts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Post</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h1 class = "title is-half is-4 has-text-primary m-auto has-text-centered"> Posts Created By Members_Only </h1>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.post %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<%= link_to 'Create New Post', new_post_path %>
-<% end %>
-
-<h1>Posts</h1>
-<div class="container-fluid col-md-6 col-md-offset-3 posts">
- 
-    <%= link_to "Create new post", new_post_path, class: 'btn btn-default', id: 'post-button' %>
-  
-  
-  <% @posts.each do |post| %>
-    <div class="well">
-      <p class="post-body"><%= post.post %></p>
-      <span class="owner">
-        <em><%= post.created_at.strftime('%b. %d, %Y') %></em>
-        <br />
-      </span>
+<div class = "column is-half is-offset-one-quarter">
+<%= link_to "Create new post", new_post_path, class: 'btn btn-default has-text-primary' %>    
+</div>  
+<% @posts.each do |post| %>
+  <div class="card column is-half is-offset-one-quarter">
+  <div class="card-content">
+    <div class="content">
+      <p class="post-content"><%= post.post %></p>
+      <br/>
+          <% if user_signed_in? %>
+      <em>By:</em> <%= current_user.name %>
+      <% end %>
+      <br/>
+      <em><%= post.created_at.strftime('%b. %d, %Y') %></em>
     </div>
-  <% end %>
+  </div>
 </div>
+  <% end %>
+  
 

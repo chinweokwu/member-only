@@ -1,7 +1,7 @@
 <nav class="navbar container" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="#">
-      <h1 class="title is-5">MEMBERS ONLY </h1>
+    <a class="navbar-item">  
+    <%= link_to "Members Only", root_url, id: 'logo', class: 'navbar-brand has-text-primary is-size-3' %>
     </a>
     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
@@ -11,14 +11,21 @@
   </div>
     <div class="navbar-end">
       <div class="navbar-item">
-        <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-light">
-            Log in
-          </a>
-        </div>
+      <% if user_signed_in? %>
+      <div class="control">
+        <%= link_to current_user.name, edit_user_registration_path, class: "button is-primary" %>
+      </div>
+      <div>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"button is-primary ml-3" %>
+      </div>
+    <% else %>
+    <div class="control">
+      <%= link_to 'Sign In', new_user_session_path, class: "button is-primary" %>
+    </div>
+    <div class="control">
+      <%= link_to 'Sign Up', new_user_registration_path, class: "button is-primary ml-3" %>
+    </div>
+    <% end %>
       </div>
     </div>
   </div>
