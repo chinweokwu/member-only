@@ -2,10 +2,10 @@
 
 Members can post public messages, but only members can see who posted the messages!  This Rails project utilizes a 'roll-your-own' authentication system and a bootstrapped (mostly) responsive design.
 
-![screenshot](./screenshot1.png)
-![screenshot](./screenshot2.png)
-![screenshot](./screenshot3.png)
-![screenshot](./screenshot4.png)
+![screenshot](screenshot1.png)
+![screenshot](screenshot2.png)
+![screenshot](screenshot3.png)
+![screenshot](screenshot4.png)
 
 ![members-only]
 
