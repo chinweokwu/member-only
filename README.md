@@ -1,24 +1,13 @@
-# README
+# members-only
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Members can post public messages, but only members can see who posted the messages!  This Rails project utilizes a 'roll-your-own' authentication system and a bootstrapped (mostly) responsive design.
 
-Things you may want to cover:
+![members-only]
+![screenshot](./screenshot1.png),(./screenshot2.png),(./screenshot3.png),(./screenshot4.png)
+## Live Demo
+[Members Only on Heroku]()
 
-* Ruby version
+(View the 'about' page to find login information!)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Installing
+This deploys easily, as a fairly simple Rails app with limited dependencies.  Just remember to run `rails db:seed` after `rails db:migrate`, in order to have a few initial members to work with!
