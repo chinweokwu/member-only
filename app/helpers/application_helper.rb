@@ -8,4 +8,12 @@ module ApplicationHelper
           (link_to 'Sign Up', new_user_registration_path, class: "control button is-primary ml-3")   
         end 
     end
+
+    def notification(notice, alert) 
+         if notice
+            content_tag(:p,  notice , :class => 'notice notification is-primary global-notification')     
+        elsif  alert 
+            content_tag(:p,  alert , :class => 'alert notification is-danger global-notification')
+        end
+    end
 end
