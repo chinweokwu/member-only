@@ -11,21 +11,7 @@
   </div>
     <div class="navbar-end">
       <div class="navbar-item">
-      <% if user_signed_in? %>
-      <div class="control">
-        <%= link_to current_user.name, edit_user_registration_path, class: "button is-primary" %>
-      </div>
-      <div>
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"button is-primary ml-3" %>
-      </div>
-    <% else %>
-    <div class="control">
-      <%= link_to 'Sign In', new_user_session_path, class: "button is-primary" %>
-    </div>
-    <div class="control">
-      <%= link_to 'Sign Up', new_user_registration_path, class: "button is-primary ml-3" %>
-    </div>
-    <% end %>
+        <%= login_helper(current_user) %>
       </div>
     </div>
   </div>
