@@ -10,9 +10,7 @@
     <div class="content">
       <p class="post-content"><%= post.post %></p>
       <br/>
-          <% if user_signed_in? %>
-      <em>By:</em> <%= post.user.name %>
-      <% end %>
+        <%= poster_name(post) %>
       <br/>
       <em><%= post.created_at.strftime('%b. %d, %Y') %></em>
     </div>
