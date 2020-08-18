@@ -1,7 +1,5 @@
 module PostsHelper
-    def poster_name(post)
-        if user_signed_in?
-          content_tag(:em,  post.user.name)
-        end
-    end
+  def poster_name(post)
+    content_tag(:em, post.user.name) if user_signed_in?
+  end
 end
