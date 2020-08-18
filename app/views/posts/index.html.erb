@@ -11,7 +11,7 @@
       <p class="post-content"><%= post.post %></p>
       <br/>
           <% if user_signed_in? %>
-      <em>By:</em> <%= current_user.name %>
+      <em>By:</em> <%= post.user.name %>
       <% end %>
       <br/>
       <em><%= post.created_at.strftime('%b. %d, %Y') %></em>
