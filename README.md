@@ -10,10 +10,6 @@ This Rails project utilizes a 'roll-your-own' authentication system and a bootst
 
 ![members-only]
 
-
-## Live Demo
-[Members Only on Heroku]()
-
 (View the 'about' page to find login information!)
 
 ## Installing
