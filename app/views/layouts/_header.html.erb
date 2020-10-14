@@ -1,0 +1,18 @@
+<nav class="navbar container" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item">  
+    <%= link_to "Members Only", root_url, id: 'logo', class: 'navbar-brand has-text-primary is-size-3' %>
+    </a>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <%= login_helper(current_user) %>
+      </div>
+    </div>
+  </div>
+</nav>

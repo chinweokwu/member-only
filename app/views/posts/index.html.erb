@@ -1,0 +1,21 @@
+
+<h1 class = "title is-half is-4 has-text-primary m-auto has-text-centered"> Posts Created By Members_Only </h1>
+
+<div class = "column is-half is-offset-one-quarter">
+<%= link_to "Create new post", new_post_path, class: 'btn btn-default has-text-primary' %>    
+</div>  
+<% @posts.each do |post| %>
+  <div class="card column is-half is-offset-one-quarter">
+  <div class="card-content">
+    <div class="content">
+      <p class="post-content"><%= post.post %></p>
+      <br/>
+        <%= poster_name(post) %>
+      <br/>
+      <em><%= post.created_at.strftime('%b. %d, %Y') %></em>
+    </div>
+  </div>
+</div>
+  <% end %>
+  
+
